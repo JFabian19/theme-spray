@@ -28,10 +28,42 @@
         "logo_width": 140,
         "menu": "main-menu"
       }
+    },
+    "marquee_8hEhfW": {
+      "type": "marquee",
+      "blocks": {
+        "text_ezYNdC": {
+          "type": "text",
+          "settings": {
+            "text": "FREE SHIPPING WORLDWIDE"
+          }
+        },
+        "text_fLJDjV": {
+          "type": "text",
+          "settings": {
+            "text": "TRUSTED BY 50,000+ USERS"
+          }
+        }
+      },
+      "block_order": [
+        "text_ezYNdC",
+        "text_fLJDjV"
+      ],
+      "name": "Infinite Marquee",
+      "settings": {
+        "bg_color": "#DC2626",
+        "text_color": "#FFFFFF",
+        "speed": 20,
+        "direction": "normal",
+        "font_size": 12,
+        "padding": 5,
+        "show_separator": true
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "marquee_8hEhfW"
   ]
 }

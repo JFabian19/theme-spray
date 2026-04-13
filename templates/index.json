@@ -9,24 +9,24 @@
  */
 {
   "sections": {
-    "main_product_QYfMcd": {
+    "main_product_QbQhY3": {
       "type": "main-product",
       "blocks": {
-        "trust_item_K8cXxH": {
+        "trust_item_adY3xB": {
           "type": "trust_item",
           "settings": {
             "icon": "truck",
             "text": "Free Shipping in the US"
           }
         },
-        "trust_item_Fh6CqC": {
+        "trust_item_TjBgJ9": {
           "type": "trust_item",
           "settings": {
             "icon": "shield",
             "text": "30-Day Money-Back Guarantee"
           }
         },
-        "trust_item_BjaRhL": {
+        "trust_item_QiK6dU": {
           "type": "trust_item",
           "settings": {
             "icon": "star",
@@ -35,9 +35,9 @@
         }
       },
       "block_order": [
-        "trust_item_K8cXxH",
-        "trust_item_Fh6CqC",
-        "trust_item_BjaRhL"
+        "trust_item_adY3xB",
+        "trust_item_TjBgJ9",
+        "trust_item_QiK6dU"
       ],
       "name": "Product Page",
       "settings": {
@@ -204,13 +204,18 @@
         "padding_top": 64,
         "padding_bottom": 64
       }
+    },
+    "17760497785ac8efcd": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
-    "main_product_QYfMcd",
+    "main_product_QbQhY3",
     "hero",
     "benefits",
     "use-cases",
-    "social-proof"
+    "social-proof",
+    "17760497785ac8efcd"
   ]
 }
