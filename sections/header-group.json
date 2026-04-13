@@ -25,7 +25,7 @@
       "type": "header",
       "settings": {
         "logo": "shopify://shop_images/logo_xdddd.png",
-        "logo_width": 140,
+        "logo_width": 50,
         "menu": "main-menu"
       }
     },
@@ -53,7 +53,7 @@
       "settings": {
         "bg_color": "#DC2626",
         "text_color": "#FFFFFF",
-        "speed": 20,
+        "speed": 12,
         "direction": "normal",
         "font_size": 12,
         "padding": 5,
