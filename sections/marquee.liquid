@@ -1,0 +1,133 @@
+{{ 'section-marquee.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #Marquee-{{ section.id }} {
+    --marquee-bg: {{ section.settings.bg_color }};
+    --marquee-text: {{ section.settings.text_color }};
+    --marquee-speed: {{ section.settings.speed }}s;
+    --marquee-padding: {{ section.settings.padding }}px;
+    --marquee-font-size: {{ section.settings.font_size }}px;
+  }
+{%- endstyle -%}
+
+<section class="marquee" id="Marquee-{{ section.id }}" role="region" aria-label="Marquee">
+  <div class="marquee__container">
+    <div class="marquee__content" style="animation-direction: {{ section.settings.direction }};">
+      {%- comment -%} We render the content twice to create the infinite loop effect {%- endcomment -%}
+      {%- for i in (1..2) -%}
+        <div class="marquee__track" aria-hidden="{% if i == 2 %}true{% else %}false{% endif %}">
+          {%- for block in section.blocks -%}
+            <div class="marquee__item" {{ block.shopify_attributes }}>
+              {%- if block.settings.text != blank -%}
+                <span class="marquee__text">{{ block.settings.text }}</span>
+              {%- endif -%}
+              {%- if block.settings.image != blank -%}
+                <img 
+                  src="{{ block.settings.image | image_url: width: 100 }}" 
+                  alt="{{ block.settings.text | escape }}"
+                  class="marquee__image"
+                  loading="lazy"
+                >
+              {%- endif -%}
+              {%- if section.settings.show_separator -%}
+                <span class="marquee__separator">•</span>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Infinite Marquee",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#DC2626"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Scroll Speed (seconds)",
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+        { "value": "normal", "label": "Right to Left" },
+        { "value": "reverse", "label": "Left to Right" }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font Size",
+      "min": 12,
+      "max": 80,
+      "step": 2,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Vertical Padding",
+      "min": 5,
+      "max": 50,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "checkbox",
+      "id": "show_separator",
+      "label": "Show Separator Dot",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Marquee Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "50% OFF TODAY ONLY"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon/Image (Optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Infinite Marquee",
+      "blocks": [
+        { "type": "text", "settings": { "text": "FREE SHIPPING WORLDWIDE" } },
+        { "type": "text", "settings": { "text": "30-DAY GUARANTEE" } },
+        { "type": "text", "settings": { "text": "TRUSTED BY 50,000+ USERS" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
