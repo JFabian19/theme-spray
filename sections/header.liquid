@@ -1,0 +1,107 @@
+{{ 'section-header.css' | asset_url | stylesheet_tag }}
+
+<header class="site-header" data-header role="banner">
+  <div class="page-width">
+    <div class="site-header__inner">
+      {%- comment -%} Mobile menu toggle {%- endcomment -%}
+      <button class="site-header__menu-toggle hide-desktop" data-menu-toggle aria-label="Menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      {%- comment -%} Logo {%- endcomment -%}
+      <div class="site-header__logo">
+        <a href="/" class="site-header__logo-link" aria-label="{{ shop.name }}">
+          {%- if section.settings.logo != blank -%}
+            <img
+              src="{{ section.settings.logo | image_url: width: 300 }}"
+              alt="{{ shop.name }}"
+              width="{{ section.settings.logo_width }}"
+              height="auto"
+              class="site-header__logo-image"
+              loading="eager"
+            >
+          {%- else -%}
+            <span class="site-header__logo-text">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+      </div>
+
+      {%- comment -%} Desktop Navigation {%- endcomment -%}
+      <nav class="site-header__nav hide-mobile" role="navigation" aria-label="Main navigation">
+        <ul class="site-header__nav-list">
+          {%- for link in linklists[section.settings.menu].links -%}
+            <li class="site-header__nav-item">
+              <a href="{{ link.url }}" class="site-header__nav-link{% if link.active %} is-active{% endif %}">
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+
+      {%- comment -%} Header actions {%- endcomment -%}
+      <div class="site-header__actions">
+        <a href="/cart" class="site-header__cart" data-cart-open aria-label="Cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 01-8 0"></path>
+          </svg>
+          <span class="site-header__cart-count" data-cart-count style="{% if cart.item_count == 0 %}display:none{% endif %}">
+            {{ cart.item_count }}
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Mobile Navigation {%- endcomment -%}
+  <div class="site-header__mobile-menu hide-desktop" data-mobile-menu>
+    <nav role="navigation" aria-label="Mobile navigation">
+      <ul class="site-header__mobile-list">
+        {%- for link in linklists[section.settings.menu].links -%}
+          <li>
+            <a href="{{ link.url }}" class="site-header__mobile-link{% if link.active %} is-active{% endif %}">
+              {{ link.title }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "div",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Logo width",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "default": 140,
+      "unit": "px"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

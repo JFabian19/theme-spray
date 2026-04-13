@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SprayPro Theme Preview</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Links (Simulating Shopify asset_url) -->
+    <link rel="stylesheet" href="assets/base.css">
+    <link rel="stylesheet" href="assets/section-announcement.css">
+    <link rel="stylesheet" href="assets/section-header.css">
+    <link rel="stylesheet" href="assets/section-hero.css">
+    <link rel="stylesheet" href="assets/section-benefits.css">
+    <link rel="stylesheet" href="assets/section-use-cases.css">
+    <link rel="stylesheet" href="assets/section-social-proof.css">
+    <link rel="stylesheet" href="assets/section-footer.css">
+
+    <style>
+        :root {
+            --color-primary: #DC2626;
+            --color-primary-hover: #B91C1C;
+            --color-text: #111827;
+            --color-text-secondary: #6B7280;
+            --color-background: #FFFFFF;
+            --color-surface: #F9FAFB;
+            --color-border: #E5E7EB;
+            --color-accent: #2563EB;
+            --color-success: #059669;
+            --page-width: 1200px;
+            --font-scale: 1;
+        }
+
+        /* Mocking specific styles since I can't run Liquid filters for background images */
+        .hero { --hero-bg: #FFFFFF; --hero-text: #111827; }
+        .benefits { background-color: #F9FAFB; }
+        .social-proof { background-color: #F9FAFB; }
+        
+        /* Helper for the demo images */
+        .mock-img {
+            background: #eee;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" style="background-color: #DC2626; color: #FFFFFF;">
+        <div class="page-width">
+            <div class="announcement-bar__inner">
+                <p class="announcement-bar__text">🔥 Limited Time: 50% OFF + Free Shipping — Order Now!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="page-width">
+            <div class="site-header__inner">
+                <div class="site-header__logo">
+                    <span class="site-header__logo-text">SPRAYPRO</span>
+                </div>
+                <nav class="site-header__nav hide-mobile">
+                    <ul class="site-header__nav-list">
+                        <li><a href="#" class="site-header__nav-link is-active">Home</a></li>
+                        <li><a href="#" class="site-header__nav-link">Shop Now</a></li>
+                        <li><a href="#" class="site-header__nav-link">About Us</a></li>
+                        <li><a href="#" class="site-header__nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="site-header__actions">
+                    <a href="#" class="site-header__cart">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path><path d="M16 10a4 4 0 01-8 0"></path></svg>
+                        <span class="site-header__cart-count">1</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="MainContent">
+        <!-- Hero Section -->
+        <section class="hero section-spacing">
+            <div class="page-width">
+                <div class="hero__grid">
+                    <div class="hero__content">
+                        <div class="hero__urgency badge badge--sale">🔥 Limited Time Offer</div>
+                        <h1 class="hero__heading">Turn Any Spray Can Into a Pro Spray Gun</h1>
+                        <p class="hero__subheading">Get a smooth, professional finish with zero finger fatigue. Perfect for automotive touch-ups, home DIY projects, and crafts.</p>
+                        <div class="hero__actions">
+                            <a href="#" class="btn btn--primary btn--large hero__cta">Get Yours Now - 50% OFF</a>
+                        </div>
+                        <div class="trust-strip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <span>Free Shipping & 30-Day Guarantee</span>
+                        </div>
+                    </div>
+                    <div class="hero__media">
+                        <div class="hero__placeholder" style="background: #f3f4f6; border-radius: 16px; aspect-ratio: 1/1; display:flex; align-items:center; justify-content:center;">
+                             <img src="https://images.unsplash.com/photo-1590483734748-03823467e761?q=80&w=1000&auto=format&fit=crop" style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits section-spacing">
+            <div class="page-width">
+                <h2 class="section-heading">Why Choose SprayPro?</h2>
+                <p class="section-subheading">Designed to make spray painting easier, cleaner, and more comfortable.</p>
+                <div class="benefits__grid grid grid--3">
+                    <div class="benefits__item">
+                        <div class="benefits__icon" style="color: #DC2626;">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 30V18a3 3 0 016 0v-4a3 3 0 016 0v4a3 3 0 016 0v12c0 6-4 10-10 10h-2c-6 0-10-4-10-10v-6a3 3 0 016 0"></path></svg>
+                        </div>
+                        <h3 class="benefits__title">Ergonomic Anti-Slip Grip</h3>
+                        <p class="benefits__text">Fits naturally in your hand for maximum control and comfort during long painting sessions.</p>
+                    </div>
+                    <div class="benefits__item">
+                        <div class="benefits__icon" style="color: #DC2626;">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="24" r="6"></circle><path d="M22 4h4l1 5.2a14 14 0 014.2 2.4L36 9l2 3.5-4.2 3a14 14 0 010 5l4.2 3L36 27l-4.8-2.4a14 14 0 01-4.2 2.4L26 32h-4l-1-5a14 14 0 01-4.2-2.4L12 27l-2-3.5 4.2-3a14 14 0 010-5L10 12.5 12 9l4.8 2.6A14 14 0 0121 9.2z"></path></svg>
+                        </div>
+                        <h3 class="benefits__title">Universal Snap-On Fit</h3>
+                        <p class="benefits__text">Easily attaches and securely locks onto almost any standard aerosol spray can in seconds.</p>
+                    </div>
+                    <div class="benefits__item">
+                        <div class="benefits__icon" style="color: #DC2626;">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 6s-12 14-12 22a12 12 0 0024 0C36 20 24 6 24 6z"></path><line x1="14" y1="14" x2="34" y2="34"></line></svg>
+                        </div>
+                        <h3 class="benefits__title">Mess-Free Application</h3>
+                        <p class="benefits__text">Keep your hands clean, avoid drips, and ensure an even, flawless coat every time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="use-cases section-spacing">
+            <div class="page-width">
+                <h2 class="section-heading">Built for Every Project</h2>
+                <div class="use-cases__grid grid grid--3">
+                    <div class="use-cases__card card">
+                        <div class="use-cases__image-wrap">
+                            <img src="https://images.unsplash.com/photo-1597838816882-4551b7ee8bfc?q=80&w=800&auto=format&fit=crop" class="use-cases__image card__image">
+                            <div class="use-cases__overlay"></div>
+                            <div class="use-cases__overlay-text"><h3 class="use-cases__title">Auto & Garage</h3></div>
+                        </div>
+                        <div class="card__body use-cases__body"><p class="use-cases__text">Ideal for painting wheels, bumpers, or restoring suspension parts.</p></div>
+                    </div>
+                    <div class="use-cases__card card">
+                        <div class="use-cases__image-wrap">
+                            <img src="https://images.unsplash.com/photo-154433334d-c64923e3e08f?q=80&w=800&auto=format&fit=crop" class="use-cases__image card__image">
+                            <div class="use-cases__overlay"></div>
+                            <div class="use-cases__overlay-text"><h3 class="use-cases__title">Home Improvement</h3></div>
+                        </div>
+                        <div class="card__body use-cases__body"><p class="use-cases__text">Quickly refurbish old furniture, fences, or metal fixtures.</p></div>
+                    </div>
+                    <div class="use-cases__card card">
+                        <div class="use-cases__image-wrap">
+                            <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=800&auto=format&fit=crop" class="use-cases__image card__image">
+                            <div class="use-cases__overlay"></div>
+                            <div class="use-cases__overlay-text"><h3 class="use-cases__title">Arts & Crafts</h3></div>
+                        </div>
+                        <div class="card__body use-cases__body"><p class="use-cases__text">Perfect for precise, detailed projects without the mess.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="social-proof section-spacing">
+            <div class="page-width">
+                <h2 class="section-heading">Trusted by Thousands</h2>
+                <div class="social-proof__layout">
+                    <div class="social-proof__reviews">
+                        <div class="social-proof__review-card">
+                            <div class="social-proof__stars">⭐⭐⭐⭐⭐</div>
+                            <blockquote class="social-proof__quote">"A total lifesaver for painting my truck's undercarriage! The handle makes the spray so much easier to control."</blockquote>
+                            <div class="social-proof__reviewer">
+                                <div class="social-proof__reviewer-avatar social-proof__reviewer-avatar--placeholder">M</div>
+                                <div><span class="social-proof__reviewer-name">Mike T.</span><span class="social-proof__reviewer-label">Verified Buyer</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-proof__guarantee">
+                        <div class="social-proof__guarantee-icon"><svg width="56" height="56" viewBox="0 0 48 48" fill="none" stroke="#059669" stroke-width="2"><path d="M24 4L6 12v10c0 11 8 20 18 24 10-4 18-13 18-24V12L24 4z"></path></svg></div>
+                        <h3 class="social-proof__guarantee-title">100% Satisfaction Guaranteed</h3>
+                        <p class="social-proof__guarantee-text">Try it risk-free for 30 days. Full refund if not satisfied.</p>
+                        <a href="#" class="btn btn--primary btn--large social-proof__guarantee-btn">Get Yours Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-width">
+            <div class="site-footer__grid">
+                <div class="site-footer__brand"><span class="site-footer__logo-text">SPRAYPRO</span><p class="site-footer__description">Professional results, zero fatigue.</p></div>
+                <div class="site-footer__column"><h4 class="site-footer__column-title">Quick Links</h4><ul class="site-footer__links"><li><a href="#">Shop</a></li><li><a href="#">Support</a></li></ul></div>
+            </div>
+            <div class="site-footer__bottom"><p class="site-footer__copyright">&copy; 2026 SprayPro. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="assets/theme.js"></script>
+</body>
+</html>

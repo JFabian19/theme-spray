@@ -1,0 +1,57 @@
+{
+  "general": {
+    "cart": "Cart",
+    "search": "Search",
+    "close": "Close",
+    "menu": "Menu"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "buy_now": "Buy It Now",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity",
+      "description": "Description",
+      "price": {
+        "regular_price": "Regular price",
+        "sale_price": "Sale price",
+        "from": "From"
+      },
+      "variant": {
+        "select": "Select {{ name }}"
+      }
+    }
+  },
+  "sections": {
+    "hero": {
+      "default_heading": "Turn Any Spray Can Into a Pro Spray Gun",
+      "default_subheading": "Get a smooth, professional finish with zero finger fatigue.",
+      "default_button": "Get Yours Now - 50% OFF",
+      "default_trust": "Free Shipping & 30-Day Guarantee"
+    },
+    "benefits": {
+      "default_heading": "Why Choose SprayPro?"
+    },
+    "use_cases": {
+      "default_heading": "Built for Every Project"
+    },
+    "social_proof": {
+      "default_heading": "Trusted by Thousands"
+    }
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "continue_shopping": "Continue Shopping",
+    "remove": "Remove"
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "close": "Close",
+    "increase_quantity": "Increase quantity",
+    "decrease_quantity": "Decrease quantity"
+  }
+}

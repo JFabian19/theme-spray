@@ -1,0 +1,144 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "Turn Any Spray Can Into a Pro Spray Gun",
+        "subheading": "Get a smooth, professional finish with zero finger fatigue. Perfect for automotive touch-ups, home DIY projects, and crafts.",
+        "button_text": "Get Yours Now - 50% OFF",
+        "trust_text": "Free Shipping & 30-Day Guarantee",
+        "show_urgency_badge": true,
+        "urgency_text": "🔥 Limited Time Offer",
+        "bg_color": "#FFFFFF",
+        "text_color": "#111827",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "benefits": {
+      "type": "benefits-grid",
+      "settings": {
+        "heading": "Why Choose SprayPro?",
+        "subheading": "Designed to make spray painting easier, cleaner, and more comfortable.",
+        "bg_color": "#F9FAFB",
+        "padding_top": 64,
+        "padding_bottom": 64
+      },
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "grip",
+            "icon_color": "#DC2626",
+            "title": "Ergonomic Anti-Slip Grip",
+            "text": "Fits naturally in your hand for maximum control and comfort during long painting sessions. Say goodbye to finger cramps."
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "snap-fit",
+            "icon_color": "#DC2626",
+            "title": "Universal Snap-On Fit",
+            "text": "Easily attaches and securely locks onto almost any standard aerosol spray can in seconds."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "drip-free",
+            "icon_color": "#DC2626",
+            "title": "Mess-Free Application",
+            "text": "Keep your hands entirely clean, avoid accidental drips, and ensure an even, flawless coat every time."
+          }
+        }
+      },
+      "block_order": ["benefit_1", "benefit_2", "benefit_3"]
+    },
+    "use-cases": {
+      "type": "use-cases",
+      "settings": {
+        "heading": "Built for Every Project",
+        "subheading": "From the garage to the craft room — SprayPro makes every job easier.",
+        "bg_color": "#FFFFFF",
+        "padding_top": 64,
+        "padding_bottom": 64
+      },
+      "blocks": {
+        "case_1": {
+          "type": "use_case",
+          "settings": {
+            "title": "Auto & Garage",
+            "text": "Ideal for painting wheels, bumpers, or restoring suspension parts."
+          }
+        },
+        "case_2": {
+          "type": "use_case",
+          "settings": {
+            "title": "Home Improvement",
+            "text": "Quickly refurbish old furniture, fences, or metal fixtures around the house."
+          }
+        },
+        "case_3": {
+          "type": "use_case",
+          "settings": {
+            "title": "Arts & Crafts",
+            "text": "Perfect for precise, detailed spray paint projects without the mess."
+          }
+        }
+      },
+      "block_order": ["case_1", "case_2", "case_3"]
+    },
+    "social-proof": {
+      "type": "social-proof",
+      "settings": {
+        "heading": "Trusted by Thousands",
+        "subheading": "See what real customers are saying about SprayPro.",
+        "bg_color": "#F9FAFB",
+        "padding_top": 64,
+        "padding_bottom": 64
+      },
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review_text": "A total lifesaver for painting my truck's undercarriage! The handle makes the spray so much easier to control, and my fingers didn't ache at all.",
+            "reviewer_name": "Mike T.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review_text": "I use this for all my craft projects now. It's so much easier and the finish comes out way more even. Absolutely love it!",
+            "reviewer_name": "Sarah K.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review_text": "Best $15 I ever spent. I painted three rooms of furniture last weekend and my hand felt great the whole time. Genius product.",
+            "reviewer_name": "James R.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "guarantee": {
+          "type": "guarantee",
+          "settings": {
+            "title": "100% Satisfaction Guaranteed",
+            "text": "Try it risk-free for 30 days. If you're not completely satisfied, we'll give you a full refund — no questions asked.",
+            "button_text": "Get Yours Now - 50% OFF",
+            "trust_1": "Free Shipping",
+            "trust_2": "30-Day Guarantee"
+          }
+        }
+      },
+      "block_order": ["review_1", "review_2", "review_3", "guarantee"]
+    }
+  },
+  "order": ["hero", "benefits", "use-cases", "social-proof"]
+}

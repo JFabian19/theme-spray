@@ -1,0 +1,107 @@
+/* ============================================================
+   USE CASES
+   ============================================================ */
+
+.use-cases__grid {
+  margin-top: 2rem;
+}
+
+.use-cases__card {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.use-cases__image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.use-cases__image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.use-cases__card:hover .use-cases__image {
+  transform: scale(1.08);
+}
+
+.use-cases__placeholder {
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.use-cases__placeholder .placeholder-svg {
+  width: 50%;
+  opacity: 0.3;
+}
+
+/* Overlay gradient */
+.use-cases__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Overlay text */
+.use-cases__overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  z-index: 2;
+}
+
+.use-cases__overlay-text .use-cases__title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Title below image (visible in card body) */
+.use-cases__title--below {
+  display: none;
+}
+
+/* If image is missing, show below title */
+.use-cases__card:not(:has(.use-cases__image)):not(:has(.use-cases__placeholder)) .use-cases__title--below {
+  display: block;
+}
+
+.use-cases__body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.use-cases__text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.use-cases__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.use-cases__link:hover {
+  gap: 0.625rem;
+  color: var(--color-primary-hover);
+}

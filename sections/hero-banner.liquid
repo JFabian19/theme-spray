@@ -1,0 +1,180 @@
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="hero section-spacing"
+  id="hero-{{ section.id }}"
+  style="
+    --hero-bg: {{ section.settings.bg_color }};
+    --hero-text: {{ section.settings.text_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="page-width">
+    <div class="hero__grid">
+      {%- comment -%} Text Content {%- endcomment -%}
+      <div class="hero__content" data-animate>
+        {%- if section.settings.show_urgency_badge -%}
+          <div class="hero__urgency badge badge--sale animate-fade-in-up">
+            {{ section.settings.urgency_text }}
+          </div>
+        {%- endif -%}
+
+        <h1 class="hero__heading animate-fade-in-up delay-1">
+          {{ section.settings.heading }}
+        </h1>
+
+        <p class="hero__subheading animate-fade-in-up delay-2">
+          {{ section.settings.subheading }}
+        </p>
+
+        <div class="hero__actions animate-fade-in-up delay-3">
+          <a
+            href="{{ section.settings.button_link }}"
+            class="btn btn--primary btn--large hero__cta"
+            id="hero-cta"
+          >
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+
+        <div class="animate-fade-in-up delay-4">
+          {% render 'trust-badges', text: section.settings.trust_text %}
+        </div>
+      </div>
+
+      {%- comment -%} Hero Image / Media {%- endcomment -%}
+      <div class="hero__media animate-fade-in-up delay-2">
+        {%- if section.settings.image != blank -%}
+          <img
+            class="hero__image"
+            src="{{ section.settings.image | image_url: width: 1200 }}"
+            alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}"
+            width="1200"
+            height="{{ 1200 | divided_by: section.settings.image.aspect_ratio | round }}"
+            loading="eager"
+            fetchpriority="high"
+          >
+        {%- else -%}
+          <div class="hero__placeholder">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "tag": "div",
+  "class": "hero-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Turn Any Spray Can Into a Pro Spray Gun"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Get a smooth, professional finish with zero finger fatigue. Perfect for automotive touch-ups, home DIY projects, and crafts."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Get Yours Now - 50% OFF"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "trust_text",
+      "label": "Trust badge text",
+      "default": "Free Shipping & 30-Day Guarantee"
+    },
+    {
+      "type": "header",
+      "content": "Urgency Badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_urgency_badge",
+      "label": "Show urgency badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "urgency_text",
+      "label": "Urgency badge text",
+      "default": "🔥 Limited Time Offer"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111827"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 60,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "category": "Hero"
+    }
+  ]
+}
+{% endschema %}

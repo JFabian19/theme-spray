@@ -1,0 +1,266 @@
+{{ 'section-social-proof.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="social-proof section-spacing"
+  id="social-proof-{{ section.id }}"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="section-heading" data-animate>{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="section-subheading" data-animate>{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <div class="social-proof__layout">
+      {%- comment -%} Reviews {%- endcomment -%}
+      <div class="social-proof__reviews">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'review' -%}
+            <div class="social-proof__review-card" data-animate {{ block.shopify_attributes }}>
+              <div class="social-proof__stars">
+                {% render 'star-rating', rating: block.settings.stars %}
+              </div>
+              <blockquote class="social-proof__quote">
+                "{{ block.settings.review_text }}"
+              </blockquote>
+              <div class="social-proof__reviewer">
+                {%- if block.settings.reviewer_image != blank -%}
+                  <img
+                    class="social-proof__reviewer-avatar"
+                    src="{{ block.settings.reviewer_image | image_url: width: 80 }}"
+                    alt="{{ block.settings.reviewer_name }}"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  >
+                {%- else -%}
+                  <div class="social-proof__reviewer-avatar social-proof__reviewer-avatar--placeholder">
+                    {{ block.settings.reviewer_name | slice: 0 }}
+                  </div>
+                {%- endif -%}
+                <div>
+                  <span class="social-proof__reviewer-name">{{ block.settings.reviewer_name }}</span>
+                  {%- if block.settings.reviewer_label != blank -%}
+                    <span class="social-proof__reviewer-label">{{ block.settings.reviewer_label }}</span>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- comment -%} Guarantee Block {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'guarantee' -%}
+          <div class="social-proof__guarantee" data-animate {{ block.shopify_attributes }}>
+            <div class="social-proof__guarantee-icon">
+              {% render 'icon-shield', size: 56, color: '#059669' %}
+            </div>
+            <h3 class="social-proof__guarantee-title">{{ block.settings.title }}</h3>
+            <p class="social-proof__guarantee-text">{{ block.settings.text }}</p>
+
+            {%- if block.settings.button_text != blank -%}
+              <a href="{{ block.settings.button_link }}" class="btn btn--primary btn--large social-proof__guarantee-btn">
+                {{ block.settings.button_text }}
+              </a>
+            {%- endif -%}
+
+            <div class="social-proof__trust-icons">
+              <div class="social-proof__trust-item">
+                {% render 'icon-truck', size: 24, color: '#059669' %}
+                <span>{{ block.settings.trust_1 }}</span>
+              </div>
+              <div class="social-proof__trust-item">
+                {% render 'icon-shield', size: 24, color: '#059669' %}
+                <span>{{ block.settings.trust_2 }}</span>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Social Proof & Offer",
+  "tag": "div",
+  "class": "social-proof-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Trusted by Thousands"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "See what real customers are saying about SprayPro."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#F9FAFB"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Star rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "A total lifesaver for painting my truck's undercarriage! The handle makes the spray so much easier to control, and my fingers didn't ache at all."
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer name",
+          "default": "Mike T."
+        },
+        {
+          "type": "text",
+          "id": "reviewer_label",
+          "label": "Reviewer label",
+          "default": "Verified Buyer"
+        },
+        {
+          "type": "image_picker",
+          "id": "reviewer_image",
+          "label": "Reviewer image (optional)"
+        }
+      ]
+    },
+    {
+      "type": "guarantee",
+      "name": "Guarantee",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Guarantee title",
+          "default": "100% Satisfaction Guaranteed"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Guarantee text",
+          "default": "Try it risk-free for 30 days. If you're not completely satisfied, we'll give you a full refund — no questions asked."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "CTA button text",
+          "default": "Get Yours Now - 50% OFF"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "CTA button link"
+        },
+        {
+          "type": "text",
+          "id": "trust_1",
+          "label": "Trust item 1",
+          "default": "Free Shipping"
+        },
+        {
+          "type": "text",
+          "id": "trust_2",
+          "label": "Trust item 2",
+          "default": "30-Day Guarantee"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Proof & Offer",
+      "category": "Social Proof",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review_text": "A total lifesaver for painting my truck's undercarriage! The handle makes the spray so much easier to control, and my fingers didn't ache at all.",
+            "reviewer_name": "Mike T.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review_text": "I use this for all my craft projects now. It's so much easier and the finish comes out way more even. Absolutely love it!",
+            "reviewer_name": "Sarah K.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review_text": "Best $15 I ever spent. I painted three rooms of furniture last weekend and my hand felt great the whole time. Genius product.",
+            "reviewer_name": "James R.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "guarantee",
+          "settings": {
+            "title": "100% Satisfaction Guaranteed",
+            "text": "Try it risk-free for 30 days. If you're not completely satisfied, we'll give you a full refund — no questions asked.",
+            "button_text": "Get Yours Now - 50% OFF",
+            "trust_1": "Free Shipping",
+            "trust_2": "30-Day Guarantee"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

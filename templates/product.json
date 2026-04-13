@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "settings": {
+        "show_dynamic_checkout": true,
+        "show_short_desc": true
+      },
+      "blocks": {
+        "trust_1": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "truck",
+            "text": "Free Shipping in the US"
+          }
+        },
+        "trust_2": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shield",
+            "text": "30-Day Money-Back Guarantee"
+          }
+        },
+        "trust_3": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "star",
+            "text": "4.9★ from 2,000+ Happy Customers"
+          }
+        }
+      },
+      "block_order": ["trust_1", "trust_2", "trust_3"]
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You May Also Like",
+        "max_products": 4,
+        "bg_color": "#F9FAFB"
+      }
+    }
+  },
+  "order": ["main-product", "related-products"]
+}

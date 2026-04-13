@@ -1,0 +1,58 @@
+/* ============================================================
+   BENEFITS GRID
+   ============================================================ */
+
+.benefits__grid {
+  margin-top: 2rem;
+}
+
+.benefits__item {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefits__item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.benefits__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.25rem;
+  background: var(--color-surface);
+  border-radius: 16px;
+  transition: background 0.3s ease;
+}
+
+.benefits__item:hover .benefits__icon {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.benefits__icon img,
+.benefits__icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.benefits__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.625rem;
+  color: var(--color-text);
+}
+
+.benefits__text {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  max-width: 320px;
+  margin: 0 auto;
+}

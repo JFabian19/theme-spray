@@ -1,0 +1,34 @@
+{
+  "current": {
+    "color_primary": "#DC2626",
+    "color_primary_hover": "#B91C1C",
+    "color_text": "#111827",
+    "color_text_secondary": "#6B7280",
+    "color_background": "#FFFFFF",
+    "color_surface": "#F9FAFB",
+    "color_border": "#E5E7EB",
+    "color_accent": "#2563EB",
+    "color_success": "#059669",
+    "font_scale": 100,
+    "page_width": 1200,
+    "cart_type": "drawer",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "announcement_text": "🔥 Limited Time: 50% OFF + Free Shipping — Order Now!"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

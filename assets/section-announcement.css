@@ -1,0 +1,33 @@
+.announcement-bar {
+  padding: 0.5rem 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+
+.announcement-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-bar__text,
+.announcement-bar__link {
+  margin: 0;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.announcement-bar__link:hover {
+  opacity: 0.85;
+}
+
+@media (min-width: 750px) {
+  .announcement-bar {
+    font-size: 0.875rem;
+    padding: 0.625rem 0;
+  }
+}
