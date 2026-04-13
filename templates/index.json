@@ -1,15 +1,61 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "main_product_QYfMcd": {
+      "type": "main-product",
+      "blocks": {
+        "trust_item_K8cXxH": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "truck",
+            "text": "Free Shipping in the US"
+          }
+        },
+        "trust_item_Fh6CqC": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shield",
+            "text": "30-Day Money-Back Guarantee"
+          }
+        },
+        "trust_item_BjaRhL": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "star",
+            "text": "4.9★ from 2,000+ Happy Customers"
+          }
+        }
+      },
+      "block_order": [
+        "trust_item_K8cXxH",
+        "trust_item_Fh6CqC",
+        "trust_item_BjaRhL"
+      ],
+      "name": "Product Page",
+      "settings": {
+        "show_dynamic_checkout": true,
+        "show_short_desc": true
+      }
+    },
     "hero": {
       "type": "hero-banner",
       "settings": {
         "heading": "Turn Any Spray Can Into a Pro Spray Gun",
         "subheading": "Get a smooth, professional finish with zero finger fatigue. Perfect for automotive touch-ups, home DIY projects, and crafts.",
         "button_text": "Get Yours Now - 50% OFF",
+        "button_link": "",
         "trust_text": "Free Shipping & 30-Day Guarantee",
         "show_urgency_badge": true,
         "urgency_text": "🔥 Limited Time Offer",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "text_color": "#111827",
         "padding_top": 60,
         "padding_bottom": 60
@@ -17,19 +63,12 @@
     },
     "benefits": {
       "type": "benefits-grid",
-      "settings": {
-        "heading": "Why Choose SprayPro?",
-        "subheading": "Designed to make spray painting easier, cleaner, and more comfortable.",
-        "bg_color": "#F9FAFB",
-        "padding_top": 64,
-        "padding_bottom": 64
-      },
       "blocks": {
         "benefit_1": {
           "type": "benefit",
           "settings": {
             "icon": "grip",
-            "icon_color": "#DC2626",
+            "icon_color": "#dc2626",
             "title": "Ergonomic Anti-Slip Grip",
             "text": "Fits naturally in your hand for maximum control and comfort during long painting sessions. Say goodbye to finger cramps."
           }
@@ -38,7 +77,7 @@
           "type": "benefit",
           "settings": {
             "icon": "snap-fit",
-            "icon_color": "#DC2626",
+            "icon_color": "#dc2626",
             "title": "Universal Snap-On Fit",
             "text": "Easily attaches and securely locks onto almost any standard aerosol spray can in seconds."
           }
@@ -47,57 +86,71 @@
           "type": "benefit",
           "settings": {
             "icon": "drip-free",
-            "icon_color": "#DC2626",
+            "icon_color": "#dc2626",
             "title": "Mess-Free Application",
             "text": "Keep your hands entirely clean, avoid accidental drips, and ensure an even, flawless coat every time."
           }
         }
       },
-      "block_order": ["benefit_1", "benefit_2", "benefit_3"]
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3"
+      ],
+      "settings": {
+        "heading": "Why Choose Arostyl?",
+        "subheading": "Designed to make spray painting easier, cleaner, and more comfortable.",
+        "bg_color": "#f9fafb",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     },
     "use-cases": {
       "type": "use-cases",
-      "settings": {
-        "heading": "Built for Every Project",
-        "subheading": "From the garage to the craft room — SprayPro makes every job easier.",
-        "bg_color": "#FFFFFF",
-        "padding_top": 64,
-        "padding_bottom": 64
-      },
       "blocks": {
         "case_1": {
           "type": "use_case",
           "settings": {
             "title": "Auto & Garage",
-            "text": "Ideal for painting wheels, bumpers, or restoring suspension parts."
+            "text": "Ideal for painting wheels, bumpers, or restoring suspension parts.",
+            "link_text": "",
+            "link_url": ""
           }
         },
         "case_2": {
           "type": "use_case",
           "settings": {
             "title": "Home Improvement",
-            "text": "Quickly refurbish old furniture, fences, or metal fixtures around the house."
+            "text": "Quickly refurbish old furniture, fences, or metal fixtures around the house.",
+            "link_text": "",
+            "link_url": ""
           }
         },
         "case_3": {
           "type": "use_case",
           "settings": {
             "title": "Arts & Crafts",
-            "text": "Perfect for precise, detailed spray paint projects without the mess."
+            "text": "Perfect for precise, detailed spray paint projects without the mess.",
+            "link_text": "",
+            "link_url": ""
           }
         }
       },
-      "block_order": ["case_1", "case_2", "case_3"]
+      "block_order": [
+        "case_1",
+        "case_2",
+        "case_3"
+      ],
+      "settings": {
+        "heading": "Built for Every Project",
+        "subheading": "From the garage to the craft room — Arostyl makes every job easier.",
+        "bg_color": "#ffffff",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     },
     "social-proof": {
       "type": "social-proof",
-      "settings": {
-        "heading": "Trusted by Thousands",
-        "subheading": "See what real customers are saying about SprayPro.",
-        "bg_color": "#F9FAFB",
-        "padding_top": 64,
-        "padding_bottom": 64
-      },
       "blocks": {
         "review_1": {
           "type": "review",
@@ -132,13 +185,32 @@
             "title": "100% Satisfaction Guaranteed",
             "text": "Try it risk-free for 30 days. If you're not completely satisfied, we'll give you a full refund — no questions asked.",
             "button_text": "Get Yours Now - 50% OFF",
+            "button_link": "",
             "trust_1": "Free Shipping",
             "trust_2": "30-Day Guarantee"
           }
         }
       },
-      "block_order": ["review_1", "review_2", "review_3", "guarantee"]
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "guarantee"
+      ],
+      "settings": {
+        "heading": "Trusted by Thousands",
+        "subheading": "See what real customers are saying about Arostyl.",
+        "bg_color": "#f9fafb",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
-  "order": ["hero", "benefits", "use-cases", "social-proof"]
+  "order": [
+    "main_product_QYfMcd",
+    "hero",
+    "benefits",
+    "use-cases",
+    "social-proof"
+  ]
 }

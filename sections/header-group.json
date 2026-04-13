@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "Header Group",
@@ -6,15 +15,23 @@
       "type": "announcement-bar",
       "settings": {
         "show_announcement": true,
-        "announcement_text": "🔥 Limited Time: 50% OFF + Free Shipping — Order Now!",
-        "bg_color": "#DC2626",
-        "text_color": "#FFFFFF"
+        "announcement_text": "🔥 Free Shipping — Order Now! 🔥",
+        "link": "",
+        "bg_color": "#dc2626",
+        "text_color": "#ffffff"
       }
     },
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "logo": "shopify://shop_images/logo_xdddd.png",
+        "logo_width": 140,
+        "menu": "main-menu"
+      }
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
 }
